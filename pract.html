@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Ser y Estar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .correcto {
+            color: white;
+            background-color: green;
+        }
+        .incorrecto {
+            color: white;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Práctica de Ser y Estar</h2>
+
+    <form id="quizForm">
+        <!-- Preguntas originales -->
+        <p><strong>1. Ella ______ muy inteligente.</strong></p>
+        <input type="radio" id="q1a" name="q1" value="es"> Es<br>
+        <input type="radio" id="q1b" name="q1" value="está"> Está<br>
+
+        <p><strong>2. El café ______ caliente.</strong></p>
+        <input type="radio" id="q2a" name="q2" value="es"> Es<br>
+        <input type="radio" id="q2b" name="q2" value="está"> Está<br>
+
+        <p><strong>3. La fiesta ______ en mi casa.</strong></p>
+        <input type="radio" id="q3a" name="q3" value="es"> Es<br>
+        <input type="radio" id="q3b" name="q3" value="está"> Está<br>
+
+        <p><strong>4. Mis amigos ______ en el parque.</strong></p>
+        <input type="radio" id="q4a" name="q4" value="son"> Son<br>
+        <input type="radio" id="q4b" name="q4" value="están"> Están<br>
+
+        <!-- Nuevas preguntas con pronombres -->
+        <p><strong>5. Yo ______ muy feliz hoy.</strong></p>
+        <input type="radio" id="q5a" name="q5" value="soy"> Soy<br>
+        <input type="radio" id="q5b" name="q5" value="estoy"> Estoy<br>
+
+        <p><strong>6. Tú ______ un buen amigo.</strong></p>
+        <input type="radio" id="q6a" name="q6" value="eres"> Eres<br>
+        <input type="radio" id="q6b" name="q6" value="estás"> Estás<br>
+
+        <p><strong>7. Nosotros ______ en la playa.</strong></p>
+        <input type="radio" id="q7a" name="q7" value="somos"> Somos<br>
+        <input type="radio" id="q7b" name="q7" value="estamos"> Estamos<br>
+
+        <p><strong>8. Nosotros ______ maestros de español.</strong></p>
+        <input type="radio" id="q8a" name="q8" value="somos"> Somos<br>
+        <input type="radio" id="q8b" name="q8" value="estamos"> Estamos<br>
+
+        <button type="button" onclick="verificar()">Verificar respuestas</button>
+    </form>
+
+    <div id="feedback"></div>
+
+    <script>
+        function verificar() {
+            let correctas = 0;
+            let feedback = "";
+
+            // Verificar respuestas
+            if (document.getElementById('q1a').checked) {
+                correctas++;
+                feedback += "<p class='correcto'>Pregunta 1: ¡Correcto! 'Es' se usa para describir características permanentes.</p>";
+            } else {
+                feedback += "<p class='incorrecto'>Pregunta 1: Incorrecto. 'Es' es correcto porque describe una característica inherente.</p>";
+            }
+
+            if (document.getElementById('q2b').checked) {
+                correctas++;
+                feedback += "<p class='correcto'>Pregunta 2: ¡Correcto! 'Está' se usa para estados temporales, como la temperatura del café.</p>";
+            } else {
+                feedback += "<p class='incorrecto'>Pregunta 2: Incorrecto. 'Está' es correcto porque describe una condición temporal.</p>";
+            }
+
+            if (document.getElementById('q3a').checked) {
+                correctas++;
+                feedback += "<p class='correcto'>Pregunta 3: ¡Correcto! 'Es' se usa para eventos que ocurren en un lugar específico.</p>";
+            } else {
+                feedback += "<p class='incorrecto'>Pregunta 3: Incorrecto. 'Es' es correcto porque la fiesta es un evento.</p>";
+            }
+
+            if (document.getElementById('q4b').checked) {
+                correctas++;
+                feedback += "<p class='correcto'>Pregunta 4: ¡Correcto! 'Están' se usa para localizar a personas o cosas en un lugar.</p>";
+            } else {
+                feedback += "<p class='incorrecto'>Pregunta 4: Incorrecto. 'Están' es correcto porque estamos hablando de la ubicación de las personas.</p>";
+            }
+
+            // Nuevas respuestas con pronombres
+            if (document.getElementById('q5b').checked) {
+                correctas++;
+                feedback += "<p class='correcto'>Pregunta 5: ¡Correcto! 'Estoy' se usa para expresar un estado temporal.</p>";
+            } else {
+                feedback += "<p class='incorrecto'>Pregunta 5: Incorrecto. 'Estoy' es correcto porque describe un estado de ánimo temporal.</p>";
+            }
+
+            if (document.getElementById('q6a').checked) {
+                correctas++;
+                feedback += "<p class='correcto'>Pregunta 6: ¡Correcto! 'Eres' se usa para una característica permanente.</p>";
+            } else {
+                feedback += "<p class='incorrecto'>Pregunta 6: Incorrecto. 'Eres' es correcto porque describe una cualidad inherente.</p>";
+            }
+
+            if (document.getElementById('q7b').checked) {
+                correctas++;
+                feedback += "<p class='correcto'>Pregunta 7: ¡Correcto! 'Estamos' se usa para describir la ubicación temporal.</p>";
+            } else {
+                feedback += "<p class='incorrecto'>Pregunta 7: Incorrecto. 'Estamos' es correcto porque describe la ubicación actual.</p>";
+            }
+
+            if (document.getElementById('q8a').checked) {
+                correctas++;
+                feedback += "<p class='correcto'>Pregunta 8: ¡Correcto! 'Somos' se usa para describir la profesión o identidad.</p>";
+            } else {
+                feedback += "<p class='incorrecto'>Pregunta 8: Incorrecto. 'Somos' es correcto porque describe una característica permanente de los sujetos.</p>";
+            }
+
+            // Mostrar resultados
+            document.getElementById('feedback').innerHTML = feedback + `<p><strong>Total de respuestas correctas: ${correctas}/8</strong></p>`;
+        }
+    </script>
+</body>
+</html>
